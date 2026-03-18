@@ -1,5 +1,5 @@
 {
-  "name": "JobSearch-App",
+  "name": "Job-Search-App",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -103,5 +103,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "20.x"
   }
-}
+ 
+  }
