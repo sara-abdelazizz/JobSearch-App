@@ -9,7 +9,7 @@ import { initializeSocket } from "./comon/Sockets/sockets.server";
 
 
 async function bootstrap() {
-  const port = process.env.PORT || 5000;
+  const port = process.env.PORT || 5000 ;
   const app = await NestFactory.create(AppModule);
 
   const limiter = rateLimit({
@@ -29,8 +29,10 @@ async function bootstrap() {
 
   const httpServer = app.getHttpServer();
   initializeSocket(httpServer);
-  await app.listen(port);
+  await app.listen(port ,"0.0.0.0");
   console.log(`Server is running on port ${port}`);
 
+ 
 }
-bootstrap();
+ bootstrap().catch((err) => {
+  console.error("BOOTSTRAP ERROR:", err)});
