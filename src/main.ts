@@ -5,7 +5,7 @@ import helmet from "helmet";
 import { LoggerInterceptor } from "./comon/interceptors/logger.interceptors";
 import { CustomValidationPipe } from "./comon/pipes/validation.pipe";
 import { initializeSocket } from "./comon/Sockets/sockets.server";
-import "src/comon/utils/events/email.events";
+
 
 
 async function bootstrap() {
@@ -29,8 +29,8 @@ async function bootstrap() {
 
   const httpServer = app.getHttpServer();
   initializeSocket(httpServer);
-  await app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
+  await app.listen(port);
+  console.log(`Server is running on port ${port}`);
+
 }
 bootstrap();
