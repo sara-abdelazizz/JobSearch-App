@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CompanyDashboardType {
+  _id: String!
+  approvedByAdmin: Boolean!
+  bannedAt: DateTime
+  companyEmail: String!
+  companyName: String!
+}
+
+type DashboardDataType {
+  companies: [CompanyDashboardType!]!
+  users: [UserDashboardType!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  dashboardData: DashboardDataType!
+}
+
+type UserDashboardType {
+  _id: String!
+  bannedAt: DateTime
+  email: String!
+  firstName: String!
+  lastName: String!
+}
